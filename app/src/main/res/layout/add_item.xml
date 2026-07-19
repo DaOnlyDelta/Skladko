@@ -14,10 +14,10 @@
         android:padding="24dp">
 
         <TextView
-            android:id="@+id/dodajTitle"
+            android:id="@+id/dialogTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Dodaj kategorijo"
+            android:text="Nov artikel"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -25,27 +25,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Circular Color Picker Indicator -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/colorPickerIndicator"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="16dp"
-            app:cardBackgroundColor="#FF5722"
             app:cardCornerRadius="24dp"
             app:cardElevation="0dp"
             app:strokeColor="#FFFFFF"
             app:strokeWidth="2dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dodajTitle" />
+            app:layout_constraintTop_toBottomOf="@+id/dialogTitle" />
 
         <EditText
-            android:id="@+id/categoryName"
+            android:id="@+id/itemNameInput"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="#5C6BC0"
-            android:hint="Ime kategorije"
+            android:hint="Ime (npr. Union 0,5L)"
             android:inputType="textCapSentences"
             android:textColor="#FFFFFF"
             android:textColorHint="#AAAAAA"
@@ -53,8 +53,22 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/colorPickerIndicator" />
 
+        <EditText
+            android:id="@+id/itemQuantityInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#5C6BC0"
+            android:hint="Začetna količina (privzeto 0)"
+            android:inputType="numberDecimal"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#AAAAAA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/itemNameInput" />
+
         <Button
-            android:id="@+id/btnDodaj"
+            android:id="@+id/btnShraniArtikel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
@@ -65,7 +79,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/categoryName" />
+            app:layout_constraintTop_toBottomOf="@+id/itemQuantityInput" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

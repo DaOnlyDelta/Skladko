@@ -1,21 +1,33 @@
-package com.example.skladko;
+package com.example.skladko.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.skladko.models.CategoryItem;
+import com.example.skladko.R;
 import com.google.android.material.card.MaterialCardView;
 import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder> {
 
-    // Now accepting our custom object instead of strings
-    private List<CategoryItem> categories;
+    // 1. Create the interface
+    public interface OnCategoryClickListener {
+        void onCategoryClick(CategoryItem category);
+        void onEditClick(CategoryItem category, int position);
+    }
 
-    public CategoryAdapter(List<CategoryItem> categories) {
+    private List<CategoryItem> categories;
+    private OnCategoryClickListener listener; // 2. Add the listener variable
+
+    // 3. Update the constructor to require the listener
+    public CategoryAdapter(List<CategoryItem> categories, OnCategoryClickListener listener) {
         this.categories = categories;
+        this.listener = listener;
     }
 
     @NonNull
@@ -29,11 +41,23 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         CategoryItem currentItem = categories.get(position);
 
-        // 1. Set the text
         holder.categoryNameText.setText(currentItem.getName());
-
-        // 2. Set the color by calling getColorValue() on your Enum
         holder.categoryCard.setCardBackgroundColor(currentItem.getColor().getColorValue());
+
+        // 4. Attach the click listener to the square
+        holder.categoryCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onCategoryClick(currentItem);
+            }
+        });
+
+        holder.btnEditCategory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onEditClick(currentItem, holder.getBindingAdapterPosition());
+            }
+        });
     }
 
     @Override
@@ -44,12 +68,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public static class CategoryViewHolder extends RecyclerView.ViewHolder {
         TextView categoryNameText;
         MaterialCardView categoryCard;
+        ImageButton btnEditCategory;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
             categoryNameText = itemView.findViewById(R.id.category_name);
-            // This is why we added the ID to the XML!
             categoryCard = itemView.findViewById(R.id.categoryCard);
+            btnEditCategory = itemView.findViewById(R.id.btnEditCategory);
         }
     }
 }

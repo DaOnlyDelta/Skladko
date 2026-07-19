@@ -1,4 +1,6 @@
-package com.example.skladko;
+package com.example.skladko.models;
+
+import com.example.skladko.ItemColor;
 
 public class CategoryItem {
     private String name;
@@ -13,7 +15,15 @@ public class CategoryItem {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public ItemColor getColor() {
         return color;
+    }
+
+    public void setColor(ItemColor color) {
+        this.color = color;
     }
 }

@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation(libs.gson)
     implementation(libs.activity.ktx)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)

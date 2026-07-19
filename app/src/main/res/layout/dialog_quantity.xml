@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#1E1E1E"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <EditText
+            android:id="@+id/dialogItemName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#5C6BC0"
+            android:gravity="center"
+            android:inputType="textCapSentences"
+            android:text="Ime artikla"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="-1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:backgroundTint="#D87D4A"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/currentQuantity"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogItemName" />
+
+        <Button
+            android:id="@+id/btnMinus2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="-5"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:backgroundTint="#D87D4A"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/currentQuantity"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinus" />
+
+        <Button
+            android:id="@+id/btnMinus3"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="24dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="-20"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:backgroundTint="#D87D4A"
+            app:cornerRadius="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/currentQuantity"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinus2" />
+
+        <EditText
+            android:id="@+id/currentQuantity"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:backgroundTint="#5C6BC0"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:text="0"
+            android:textColor="#FFFFFF"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnPlus"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="+1"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:backgroundTint="#4CAF50"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMinus"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/currentQuantity"
+            app:layout_constraintTop_toTopOf="@+id/btnMinus" />
+
+        <Button
+            android:id="@+id/btnPlus2"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="+5"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            app:backgroundTint="#4CAF50"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMinus2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/currentQuantity"
+            app:layout_constraintTop_toTopOf="@+id/btnMinus2" />
+
+        <Button
+            android:id="@+id/btnPlus4"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="+20"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            app:backgroundTint="#4CAF50"
+            app:cornerRadius="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMinus3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/currentQuantity"
+            app:layout_constraintTop_toTopOf="@+id/btnMinus3" />
+
+        <Button
+            android:id="@+id/btnIzbrisiItem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="Izbriši"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#D87D4A"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnShraniKolicino"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinus3" />
+
+        <Button
+            android:id="@+id/btnShraniKolicino"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="8dp"
+            android:text="Shrani"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#5C6BC0"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnIzbrisiItem"
+            app:layout_constraintTop_toBottomOf="@+id/btnMinus3" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
