@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Skladko</string>
+    <string name="btn_close">Zapri</string>
+    <string name="btn_add">Dodaj</string>
+    <string name="btn_cancel">Prekliči</string>
+    <string name="btn_save">Shrani</string>
+    <string name="btn_export">Izvozi</string>
+    <string name="btn_share_email">Pošlji e-pošto</string>
+    <string name="btn_download">Prenesi</string>
+    <string name="hint_item_name">Vnesite ime artikla...</string>
+    <string name="title_add_item">Nov artikel</string>
+    <string name="title_edit_item">Uredi artikel</string>
+    <string name="toast_empty_name">Ime artikla ne more biti prazno!</string>
+    <string name="toast_item_exists">Artikel s tem imenom že obstaja!</string>
+    <string name="toast_added">Artikel dodan.</string>
+    <string name="toast_updated">Artikel posodobljen.</string>
+    <string name="toast_deleted">Artikel izbrisan.</string>
+    <string name="menu_export">Izvozi v Excel (CSV)</string>
+    <string name="confirm_delete">Ali ste prepričani, da želite izbrisati ta artikel?</string>
+    <string name="yes">Da</string>
+    <string name="no">Ne</string>
+</resources>
